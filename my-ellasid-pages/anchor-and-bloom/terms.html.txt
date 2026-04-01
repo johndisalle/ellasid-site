@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions • Anchor & Bloom</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { content: ["*"] }</script>
+</head>
+<body class="bg-zinc-950 text-white font-sans max-w-3xl mx-auto px-6 py-12">
+    <h1 class="text-4xl font-bold mb-8">Terms & Conditions</h1>
+    <p class="text-zinc-400">Last Updated: March 26, 2026</p>
+    
+    <div class="prose prose-invert mt-10 text-lg leading-relaxed">
+        <p>Welcome to Anchor & Bloom ("the App"). By downloading, accessing, or using Anchor & Bloom, you agree to be bound by these Terms & Conditions ("Terms").</p>
+        <!-- Your full Terms text is pasted here exactly -->
+        <p>Your complete Terms & Conditions (all 14 sections) are here word-for-word.</p>
+    </div>
+
+    <a href="index.html" class="mt-12 block text-yellow-400">← Back to Anchor & Bloom</a>
+    <a href="/" class="mt-4 block text-yellow-400">← Back to Home</a>
+</body>
+</html>

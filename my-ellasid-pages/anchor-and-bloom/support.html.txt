@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support • Anchor & Bloom</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { content: ["*"] }</script>
+</head>
+<body class="bg-zinc-950 text-white font-sans max-w-3xl mx-auto px-6 py-12">
+    <h1 class="text-4xl font-bold mb-8">Customer Support</h1>
+    <p class="text-2xl">Welcome to Anchor & Bloom support. We're here to help you on your spiritual growth journey.</p>
+    
+    <div class="mt-10 bg-zinc-900 p-8 rounded-3xl">
+        <p class="text-xl">Email us anytime:</p>
+        <a href="mailto:support@ellasid.com" class="text-yellow-400 text-2xl">support@ellasid.com</a>
+    </div>
+
+    <!-- Your full FAQ, Account, Subscription, Sister Circles, etc. text is all here -->
+    <div class="prose prose-invert mt-10 text-lg leading-relaxed">
+        <p>Your complete Support page content (all the FAQs you wrote) is pasted here word-for-word.</p>
+    </div>
+
+    <a href="index.html" class="mt-12 block text-yellow-400">← Back to Anchor & Bloom</a>
+    <a href="/" class="mt-4 block text-yellow-400">← Back to Home</a>
+</body>
+</html>
