@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ellasid • Anchor & Bloom</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { content: ["*"] }</script>
+</head>
+<body class="bg-zinc-950 text-white font-sans">
+    <nav class="bg-black p-4 sticky top-0">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <a href="/" class="text-2xl font-bold">ellasid</a>
+            <a href="/anchor-and-bloom/" class="hover:text-yellow-400">Anchor & Bloom</a>
+        </div>
+    </nav>
+
+    <div class="max-w-6xl mx-auto px-6 py-20 text-center">
+        <h1 class="text-6xl font-bold mb-4">Anchor & Bloom</h1>
+        <p class="text-2xl text-zinc-400 mb-10">Rooted in Christ. Blooming in purpose.<br>A faith-based daily devotional and spiritual growth app for women.</p>
+        <a href="/anchor-and-bloom/" class="bg-yellow-400 text-black px-8 py-4 rounded-2xl text-xl font-semibold inline-block hover:bg-yellow-300">Learn more about Anchor & Bloom →</a>
+    </div>
+
+    <footer class="bg-black py-8 text-center text-zinc-500">
+        <p>© Ellasid • Made with love for iOS</p>
+    </footer>
+</body>
+</html>
