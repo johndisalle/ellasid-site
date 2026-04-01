@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy • My First App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { content: ["*"] }</script>
+</head>
+<body class="bg-zinc-950 text-white font-sans max-w-3xl mx-auto px-6 py-12">
+    <h1 class="text-4xl font-bold mb-8">Privacy Policy</h1>
+    <p class="text-zinc-400">Last updated: April 1, 2026</p>
+    
+    <div class="prose prose-invert mt-10 text-lg">
+        <p>We care about your privacy. This policy explains what information My First App collects and how we use it.</p>
+        <!-- Put your real privacy text here. You can copy a free template later and paste it in -->
+        <p class="mt-8">We collect no personal data unless you choose to share it. No ads. No selling your info.</p>
+    </div>
+
+    <a href="index.html" class="mt-12 block text-yellow-400">← Back to My First App</a>
+    <a href="/" class="mt-4 block text-yellow-400">← Back to Home</a>
+</body>
+</html>

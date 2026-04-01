@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ellasid • Beautiful iOS Apps</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { content: ["*"] }
+    </script>
+</head>
+<body class="bg-zinc-950 text-white font-sans">
+    <!-- Top bar -->
+    <nav class="bg-black p-4 sticky top-0">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <a href="/" class="text-2xl font-bold">ellasid</a>
+            <a href="/my-first-app/" class="hover:text-yellow-400">My First App</a>
+            <!-- When you add more apps, add more links here like: <a href="/cool-game/">Cool Game</a> -->
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="max-w-6xl mx-auto px-6 py-20 text-center">
+        <h1 class="text-6xl font-bold mb-4">Welcome to Ellasid</h1>
+        <p class="text-2xl text-zinc-400 mb-10">We make simple, beautiful iOS apps that you’ll love using every day.</p>
+        <a href="/my-first-app/" class="bg-yellow-400 text-black px-8 py-4 rounded-2xl text-xl font-semibold inline-block hover:bg-yellow-300">See Our Apps →</a>
+    </div>
+
+    <!-- Apps section -->
+    <div class="max-w-6xl mx-auto px-6 py-12">
+        <h2 class="text-3xl font-bold mb-8 text-center">Our Apps</h2>
+        
+        <!-- App card 1 -->
+        <div class="bg-zinc-900 rounded-3xl p-8 flex flex-col md:flex-row gap-8 items-center">
+            <div class="flex-1">
+                <h3 class="text-4xl font-bold">My First App</h3>
+                <p class="text-zinc-400 mt-3 text-lg">The app that started it all. Super simple and fun!</p>
+                <a href="/my-first-app/" class="inline-block mt-6 bg-white text-black px-6 py-3 rounded-2xl font-medium">Learn more about My First App →</a>
+            </div>
+            <div class="flex-1 text-center">
+                <!-- You can replace this with a real screenshot later -->
+                <div class="bg-zinc-800 rounded-3xl w-64 h-64 mx-auto flex items-center justify-center text-5xl">📱</div>
+            </div>
+        </div>
+
+        <!-- When you make more apps, just copy the whole <div class="bg-zinc-900..."> block above and paste another one below -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 text-center text-zinc-500">
+        <p>© Ellasid • Made with love for iOS</p>
+    </footer>
+</body>
+</html>
