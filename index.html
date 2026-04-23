@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ellaSiD LLC — Apps by John DiSalle</title>
+  <meta name="description" content="Independent apps built with purpose. Faith tools, legal defense, golf stats, and habit tracking." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0e0e0e;
+      --off-white: #f7f6f3;
+      --warm-gray: #8a8580;
+      --rule: #e4e2dd;
+
+      --abide: #4a6fa5;
+      --abide-light: #eef2f8;
+      --bloom: #8b5e7a;
+      --bloom-light: #f5eef3;
+      --arrow: #5c6b3a;
+      --arrow-light: #eef1e8;
+      --answered: #b8490a;
+      --answered-light: #fdf0ea;
+      --tee: #2e7d5e;
+      --tee-light: #e8f4ef;
+      --cadence: #5a4e8e;
+      --cadence-light: #f0eefa;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--off-white);
+      color: var(--black);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px;
+      height: 64px;
+      background: rgba(247,246,243,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      color: var(--black);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--warm-gray);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--black); }
+
+    /* HERO */
+    .hero {
+      padding: 160px 48px 96px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .hero-eyebrow {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.75rem, 6vw, 4.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      max-width: 780px;
+      margin-bottom: 28px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--warm-gray);
+    }
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--warm-gray);
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+    /* DIVIDER */
+    .section-rule {
+      width: 100%;
+      height: 1px;
+      background: var(--rule);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* APPS GRID */
+    .apps-section {
+      padding: 80px 48px 120px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .apps-label {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      margin-bottom: 48px;
+    }
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+    }
+    .app-card {
+      background: var(--off-white);
+      padding: 40px 36px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: background 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .app-card::after {
+      content: '→';
+      position: absolute;
+      top: 40px; right: 36px;
+      font-size: 1rem;
+      color: var(--warm-gray);
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .app-card:hover::after { opacity: 1; transform: translateX(0); }
+
+    .app-card:hover { background: #fff; }
+
+    .app-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .app-card-top { display: flex; align-items: center; gap: 12px; }
+    .app-category {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+    }
+    .app-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      letter-spacing: -0.01em;
+      color: var(--black);
+      line-height: 1.2;
+    }
+    .app-desc {
+      font-size: 0.9375rem;
+      color: var(--warm-gray);
+      line-height: 1.6;
+    }
+    .app-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 100px;
+      margin-top: auto;
+      align-self: flex-start;
+    }
+
+    /* card color themes */
+    .card-abide .app-dot { background: var(--abide); }
+    .card-abide .app-tag { background: var(--abide-light); color: var(--abide); }
+    .card-bloom .app-dot { background: var(--bloom); }
+    .card-bloom .app-tag { background: var(--bloom-light); color: var(--bloom); }
+    .card-arrow .app-dot { background: var(--arrow); }
+    .card-arrow .app-tag { background: var(--arrow-light); color: var(--arrow); }
+    .card-answered .app-dot { background: var(--answered); }
+    .card-answered .app-tag { background: var(--answered-light); color: var(--answered); }
+    .card-tee .app-dot { background: var(--tee); }
+    .card-tee .app-tag { background: var(--tee-light); color: var(--tee); }
+    .card-cadence .app-dot { background: var(--cadence); }
+    .card-cadence .app-tag { background: var(--cadence-light); color: var(--cadence); }
+
+    /* ABOUT STRIP */
+    .about-strip {
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 80px 48px;
+    }
+    .about-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-inner h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .about-inner p {
+      font-size: 1rem;
+      color: var(--warm-gray);
+      line-height: 1.8;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 40px 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    footer p { font-size: 0.875rem; color: var(--warm-gray); }
+    footer a { color: var(--warm-gray); text-decoration: none; }
+    footer a:hover { color: var(--black); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-eyebrow { animation: fadeUp 0.6s ease both; }
+    .hero h1 { animation: fadeUp 0.6s 0.1s ease both; }
+    .hero p { animation: fadeUp 0.6s 0.2s ease both; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .hero { padding: 120px 24px 64px; }
+      .apps-section { padding: 64px 24px 80px; }
+      .apps-grid { grid-template-columns: 1fr 1fr; }
+      .about-strip { padding: 64px 24px; }
+      .about-inner { grid-template-columns: 1fr; gap: 32px; }
+      footer { padding: 32px 24px; flex-direction: column; gap: 12px; text-align: center; }
+    }
+    @media (max-width: 600px) {
+      .apps-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="/">ellaSiD LLC</a>
+    <div class="nav-links">
+      <a href="#apps">Apps</a>
+      <a href="#about">About</a>
+      <a href="mailto:support@ellasid.com">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <p class="hero-eyebrow">ellaSiD LLC · Independent Software</p>
+    <h1>Apps built with<br /><em>purpose</em> and craft.</h1>
+    <p>Six iOS apps across faith, law, sports, and daily habits — each one solving a real problem for real people.</p>
+  </section>
+
+  <div class="section-rule"></div>
+
+  <section class="apps-section" id="apps">
+    <p class="apps-label">The Apps</p>
+    <div class="apps-grid">
+
+      <a class="app-card card-abide" href="/abidejourney.html">
+        <div class="app-card-top">
+          <div class="app-dot"></div>
+          <span class="app-category">Faith · Couples</span>
+        </div>
+        <div class="app-name">AbideJourney</div>
+        <div class="app-desc">Daily devotionals and scripture-based journaling for couples who want to grow in faith together.</div>
+        <span class="app-tag">Live on App Store</span>
+      </a>
+
+      <a class="app-card card-bloom" href="/anchor-bloom.html">
+        <div class="app-card-top">
+          <div class="app-dot"></div>
+          <span class="app-category">Faith · Women</span>
+        </div>
+        <div class="app-name">Anchor & Bloom</div>
+        <div class="app-desc">A daily companion for spiritual growth — morning anchoring, evening reflection, and a global sisterhood.</div>
+        <span class="app-tag">Live on App Store</span>
+      </a>
+
+      <a class="app-card card-arrow" href="/anchor-arrow.html">
+        <div class="app-card-top">
+          <div class="app-dot"></div>
+          <span class="app-category">Faith · Men</span>
+        </div>
+        <div class="app-name">Anchor & Arrow</div>
+        <div class="app-desc">Two minutes every morning and evening to anchor your faith, track your roles, and sharpen your brothers.</div>
+        <span class="app-tag">Live on App Store</span>
+      </a>
+
+      <a class="app-card card-answered" href="/answered.html">
+        <div class="app-card-top">
+          <div class="app-dot"></div>
+          <span class="app-category">Legal · Self-Help</span>
+        </div>
+        <div class="app-name">Answered</div>
+        <div class="app-desc">Sued for debt in Wisconsin? File a legal Answer, run the playbook, and fight back — without a lawyer.</div>
+        <span class="app-tag">Live on App Store</span>
+      </a>
+
+      <a class="app-card card-tee" href="/teemetrics.html">
+        <div class="app-card-top">
+          <div class="app-dot"></div>
+          <span class="app-category">Sports · Golf</span>
+        </div>
+        <div class="app-name">TeeMetrics</div>
+        <div class="app-desc">Track every round with GPS yardages, shot stats, and score history. Know your game, improve your game.</div>
+        <span class="app-tag">Live on App Store</span>
+      </a>
+
+      <a class="app-card card-cadence" href="/cadence.html">
+        <div class="app-card-top">
+          <div class="app-dot"></div>
+          <span class="app-category">Productivity · Habits</span>
+        </div>
+        <div class="app-name">Cadence</div>
+        <div class="app-desc">Track anything on a schedule — "When did I last?" answered instantly for every recurring task in your life.</div>
+        <span class="app-tag">Live on App Store</span>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="about-strip" id="about">
+    <div class="about-inner">
+      <h2>Built independently,<br />shipped with care.</h2>
+      <p>ellaSiD LLC is a one-person indie software studio based in Eau Claire, Wisconsin. Every app is designed to solve a specific, real problem — no bloat, no filler, no dark patterns. Just tools that work and earn their place on your home screen.<br /><br />Questions or support? Reach out at <a href="mailto:support@ellasid.com" style="color:var(--black)">support@ellasid.com</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 ellaSiD LLC · John DiSalle · Eau Claire, WI</p>
+    <p><a href="mailto:support@ellasid.com">support@ellasid.com</a></p>
+  </footer>
+
+</body>
+</html>
